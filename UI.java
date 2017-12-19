@@ -279,7 +279,7 @@ class UIPackageManagerListener implements PackageManagerListener {
 			Boot.boot(UI.class, UIPluginContext.class, args);
 			Boot.setLatestReleaseInstalled();
 		} catch (Exception e1) {
-			throw new RuntimeException(e1);
+			throw new RuntimeException("error");
 		} finally {
 			frame.setVisible(false);
 		}

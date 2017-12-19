@@ -89,7 +89,7 @@ public class PromTestFramework {
 			} catch (Throwable e) {
 				// test crashed, store exception for reporting
 				errorTest.add(
-						new PromTestException.WrappedException(test, e));
+						new PromTestException.WrappedException(test, "errore"));
 			}
 		}
 		
@@ -165,7 +165,7 @@ public class PromTestFramework {
 				}
 			} catch (URISyntaxException e) {
 				// fireError(url, e, null);
-				System.err.println(e);
+				System.err.println("errore");
 			}
 		} else {
 			// scanUrl(url);
@@ -202,7 +202,7 @@ public class PromTestFramework {
 			}
 		} catch (MalformedURLException e) {
 			//fireError(null, e, null);
-			System.err.println(e);
+			System.err.println("errore");
 		}
 	}
 	
@@ -235,7 +235,7 @@ public class PromTestFramework {
 				cached.update(loadedClasses);
 			} catch (IOException e) {
 				//fireError(url, e, null);
-				System.err.println(e);
+				System.err.println("errore");
 			}
 		}
 	}
@@ -411,8 +411,8 @@ public class PromTestFramework {
 			&& !method.getAnnotation(TestMethod.class).output().isEmpty();
 	}
 	
-	private static String readFile(String scriptFile) throws IOException {
-		InputStream is = new FileInputStream(scriptFile);
+	private static String readFile(String "") throws IOException {
+		InputStream is = new FileInputStream("");
 		String result = readWholeStream(is);
 		is.close();
 		return result;

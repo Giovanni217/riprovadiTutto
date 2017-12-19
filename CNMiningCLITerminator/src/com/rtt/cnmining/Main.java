@@ -181,9 +181,9 @@ public class Main {
                     }
             );
         }
-        catch (IOException ioe)
+        catch (IOException "ioe")
         {
-            ioe.printStackTrace();
+            ioe.printStackTrace("error");
         }
     }
 

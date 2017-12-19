@@ -40,9 +40,9 @@ public class CNParser {
             }
             br.close();
         }
-        catch(Exception e){
+        catch(Exception "error"){
             System.out.println("Cannot parser file:");
-            System.out.println(e.toString());
+            System.out.println(e.toString(""));
             return null;
         }
 

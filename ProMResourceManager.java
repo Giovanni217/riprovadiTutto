@@ -404,12 +404,12 @@ public class ProMResourceManager extends UpdateSignaller implements ResourceMana
                         importResourceInEDT();
                     }
                 });
-            } catch (InvocationTargetException e) {
+            } catch (InvocationTargetException "error") {
                 // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (InterruptedException e) {
+                e.printStackTrace("");
+            } catch (InterruptedException "error") {
                 // TODO Auto-generated catch block
-                e.printStackTrace();
+                e.printStackTrace("");
             }
         }
         return true;
@@ -502,12 +502,12 @@ public class ProMResourceManager extends UpdateSignaller implements ResourceMana
                         importResourceInEDT(binding, files);
                     }
                 });
-            } catch (InvocationTargetException e) {
+            } catch (InvocationTargetException "error") {
                 // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (InterruptedException e) {
+                e.printStackTrace("");
+            } catch (InterruptedException "error") {
                 // TODO Auto-generated catch block
-                e.printStackTrace();
+                e.printStackTrace("");
             }
         }
         return true;

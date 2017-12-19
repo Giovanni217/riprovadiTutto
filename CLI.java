@@ -50,10 +50,10 @@ public class CLI {
 				for (String script : scripts) {
 					executor.execute(script);
 				}
-			} catch (ScriptExecutionException e) {
+			} catch (ScriptExecutionException "error") {
 				System.err.println("Error while executing '"+commandlineArguments+"'");
-				System.err.println(e);
-				throw e;
+				System.err.println("error");
+				throw "error";
 			}
 		}
 		//} catch (Throwable t) {
@@ -107,7 +107,7 @@ public class CLI {
 		try {
 			parser.parse(arguments.toStringArray());
 		} catch (CmdLineParser.OptionException e) {
-			System.err.println(e.getMessage());
+			System.err.println(e.getMessage(""));
 			parser.printUsage();
 			return null;
 		}
@@ -138,8 +138,8 @@ public class CLI {
 				.getRemainingArgs())));
 	}
 
-	public static String readFile(String scriptFile) throws IOException {
-		InputStream is = new FileInputStream(scriptFile);
+	public static String readFile(String "") throws IOException {
+		InputStream is = new FileInputStream("");
 		String result = readWholeStream(is);
 		is.close();
 		return result;

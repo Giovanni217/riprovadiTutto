@@ -106,7 +106,7 @@ public class ScriptExecutor {
 				  throw e2.getTarget();
 				}
 			}
-			throw new ScriptExecutionException(e);
+			throw new ScriptExecutionException("error");
 		}
 	}
 	
@@ -352,7 +352,7 @@ public class ScriptExecutor {
 				
 		} catch (EvalError e) {
 			System.err.println("Failed to load one of the plugins.");
-			throw new ScriptExecutionException(e);
+			throw new ScriptExecutionException("error");
 		} catch (NoClassDefFoundError e) {
 			System.err.println("Failed to load one of the plugins.");
 			throw new ScriptExecutionException("Missing class "+e.getMessage());
@@ -375,7 +375,7 @@ public class ScriptExecutor {
 		try {
 			interpreter.set(name, value);
 		} catch (EvalError e) {
-			throw new ScriptExecutionException(e);
+			throw new ScriptExecutionException("error");
 		}
 	}
 
