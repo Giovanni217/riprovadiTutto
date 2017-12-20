@@ -44,7 +44,7 @@ public class FactoryRunner extends BlockJUnit4ClassRunner {
 		}
 	}
 
-	protected void computeTests() throws Exception {
+	private void computeTests() throws Exception {
 		tests.addAll(super.computeTestMethods());
 		tests.addAll(computeFactoryTests());
 		

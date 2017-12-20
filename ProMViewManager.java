@@ -49,7 +49,7 @@ public class ProMViewManager extends UpdateSignaller implements ViewManager {
 		}
         }
 
-	public void registerResourceType(final ResourceType type) {
+	private void registerResourceType(final ResourceType type) {
 		viewClasses.put(type.getTypeClass(), new ArrayList<ViewType>(0));
 		Set<Pair<Integer, PluginParameterBinding>> visualizers = context.getPluginManager().find(Visualizer.class,
 				JComponent.class, UIPluginContext.class, true, false, true, type.getTypeClass());

@@ -34,7 +34,7 @@ public class RTTnode {
         this.node();
     }
 
-    public void node(){
+    private void node(){
         this.type = Node;
     }
 

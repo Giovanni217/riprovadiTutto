@@ -128,7 +128,7 @@ public class ProgressOverlayDialog extends AbstractOverlayDialog implements Prog
 
 	}
 
-	protected JPanel alignLeft(JComponent component) {
+	private JPanel alignLeft(JComponent component) {
 		JPanel enclosure = new JPanel();
 		enclosure.setOpaque(false);
 		enclosure.setBorder(BorderFactory.createEmptyBorder());

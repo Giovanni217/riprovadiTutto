@@ -44,11 +44,11 @@ public class ProMAction implements Action, Comparable<ProMAction> {
 	private String[] keywords;
 	private String[] catergories;
         
-        public void pMAP1(int parameterNamesSize, PluginDescriptor plugin, int methodIndex, ProMResourceManager resourceManager, int resIndex){
+        private void pMAP1(int parameterNamesSize, PluginDescriptor plugDes, int metIn, ProMResourceManager resourceManager, int resIndex){
             for (int i = 0; i < parameterNamesSize; i++) {
-			Class<?> type = plugin.getParameterTypes(methodIndex).get(i);
+			Class<?> type = plugDes.getParameterTypes(metIn).get(i);
 
-			String name = plugin.getParameterNames(methodIndex).get(i);
+			String name = plugDes.getParameterNames(metIn).get(i);
 
 			boolean isArray = type.isArray();
 			if (isArray) {
@@ -67,10 +67,10 @@ public class ProMAction implements Action, Comparable<ProMAction> {
 		}
         }
         
-        public void pMAP2(int returnNamesSize, PluginDescriptor plugin, ProMResourceManager resourceManager){
+        private void pMAP2(int returnNamesSize, PluginDescriptor plugDes, ProMResourceManager resourceManager){
             for (int i = 0; i < returnNamesSize; i++) {
-			Class<?> type = plugin.getReturnTypes().get(i);
-			String name = plugin.getReturnNames().get(i);
+			Class<?> type = plugDes.getReturnTypes().get(i);
+			String name = plugDes.getReturnNames().get(i);
 
 			boolean isArray = type.isArray();
 			if (type.isArray()) {

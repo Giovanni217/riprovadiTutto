@@ -22,11 +22,11 @@ public class ProMResourceType implements ResourceType {
 	private String name;
 	private final static String DEFAULT_ICON = "resourcetype_model_30x35.png";
 
-        public Image pMRTP1(Image icon){
+        private Image pMRTP1(Image ic){
             if (type.isAnnotationPresent(Icon.class)) {
-				icon = ImageLoader.load(type.getAnnotation(Icon.class).icon());
+				ic = ImageLoader.load(type.getAnnotation(Icon.class).icon());
 			}
-            return icon;
+            return ic;
         }
         
 	public ProMResourceType(Class<?> aType) {

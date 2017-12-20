@@ -118,31 +118,31 @@ public class ScriptExecutor {
 	 * @return
 	 */
         
-        private static int wP1(Signature signature, int index, StringBuffer init){
+        private static int wP1(Signature signature, int index, StringBuffer strBuff){
             for (Class<?> cl : signature.getParameterTypes()) {
 							if (index > 0) {
-								init.append(", ");
+								strBuff.append(", ");
 							}
-							init.append(cl.getCanonicalName());
-							init.append(" p" + index++);
+							strBuff.append(cl.getCanonicalName());
+							strBuff.append(" p" + index++);
 						}
             return index;
         }
         
-        private static void wPP2(int signParamTypesSize, StringBuffer init){
+        private static void wPP2(int signParamTypesSize, StringBuffer strBuff){
             for (int i = 0; i < signParamTypesSize; i++) {
 							if (i > 0) {
-								init.append(", ");
+								strBuff.append(", ");
 							}
-							init.append("p" + i);
+							strBuff.append("p" + i);
 						}
         }
         
-        private static void wPP0(Signature signature, StringBuffer init){
+        private static void wPP0(Signature signature, StringBuffer strBuff){
             if (signature.getReturnTypes().size() == 1) {
-							init.append(Object.class.getCanonicalName());
+							strBuff.append(Object.class.getCanonicalName());
 						} else {
-							init.append(Object[].class.getCanonicalName());
+							strBuff.append(Object[].class.getCanonicalName());
 						}
         }
         
@@ -236,31 +236,31 @@ public class ScriptExecutor {
 		return workingPlugins;
 	}
         
-        private static void iP1(Signature signature, StringBuffer init){
+        private static void iP1(Signature signature, StringBuffer strBuff){
             if (signature.getReturnTypes().size() == 1) {
-						init.append(Object.class.getCanonicalName());
+						strBuff.append(Object.class.getCanonicalName());
 					} else {
-						init.append(Object[].class.getCanonicalName());
+						strBuff.append(Object[].class.getCanonicalName());
 					}
         }
 
-        private static int iP2(Signature signature, StringBuffer init, int index){
+        private static int iP2(Signature signature, StringBuffer strBuff, int index){
             for (Class<?> cl : signature.getParameterTypes()) {
 						if (index > 0) {
-							init.append(", ");
+							strBuff.append(", ");
 						}
-						init.append(cl.getCanonicalName());
-						init.append(" p" + index++);
+						strBuff.append(cl.getCanonicalName());
+						strBuff.append(" p" + index++);
 					}
             return index;
         }
         
-        private static void iP3(int signParamTypesSize, StringBuffer init){
+        private static void iP3(int signParamTypesSize, StringBuffer strBuff){
             for (int i = 0; i < signParamTypesSize; i++) {
 						if (i > 0) {
-							init.append(", ");
+							strBuff.append(", ");
 						}
-						init.append("p" + i);
+						strBuff.append("p" + i);
 					}
         }
         

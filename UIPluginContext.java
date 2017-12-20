@@ -125,7 +125,7 @@ public class UIPluginContext extends AbstractPluginContext {
 		return (UIPluginContext) super.getRootContext();
 	}
 
-	public void setTask(ProMTask task) {
+	private void setTask(ProMTask task) {
 		this.task = task;
 	}
 
