@@ -106,7 +106,7 @@ public class ScriptExecutor {
 				  throw e2.getTarget();
 				}
 			}
-			throw new ScriptExecutionException("error");
+			throw new ScriptExecutionException(e);
 		}
 	}
 	

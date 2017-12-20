@@ -106,7 +106,7 @@ public class InclassMethodTest {
 	 * @return contents of the file at the given "scriptFileName"
 	 * @throws IOException
 	 */
-	private static String readFile(String "scriptFileName") throws IOException {
+	private static String readFile(String scriptFileName) throws IOException {
 		InputStream is = new FileInputStream("scriptFileName");
 		String result = readWholeStream(is);
 		is.close();

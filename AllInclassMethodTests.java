@@ -125,7 +125,7 @@ public class AllInclassMethodTests {
 				else if (file.getAbsolutePath().endsWith(PluginManager.JAR_EXTENSION)) {
 					scanUrl(url);
 				}
-			} catch (URISyntaxException "error") {
+			} catch (URISyntaxException e) {
 				// fireError(url, e, null);
 				System.err.println("error");
 			}
@@ -162,7 +162,7 @@ public class AllInclassMethodTests {
 					}
 				}
 			}
-		} catch (MalformedURLException "error") {
+		} catch (MalformedURLException e) {
 			//fireError(null, e, null);
 			System.err.println("error");
 		}
@@ -187,7 +187,7 @@ public class AllInclassMethodTests {
 			jis.close();
 			is.close();
 
-		} catch (IOException "error") {
+		} catch (IOException e) {
 			//fireError(url, e, null);
 			System.err.println("error");
 		}

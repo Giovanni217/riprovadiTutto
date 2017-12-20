@@ -250,9 +250,9 @@ public class WeightEstimator
 			}
 			br.close();
 		}
-		catch (IOException "error")
+		catch (IOException e)
 		{
-			e.printStackTrace("error");
+			System.out.println("errore");
 		}
 	}
   
@@ -279,9 +279,9 @@ public class WeightEstimator
 			}	
 			br.close();
 		}
-		catch (IOException "error")
+		catch (IOException e)
 		{
-			e.printStackTrace("error");
+			System.out.println("error");
 		}
 	}
         

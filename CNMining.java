@@ -2045,9 +2045,9 @@ public class CNMining
 			weightMatrix = weightEstimator.getDependencyMatrix();
  
 		}
-		catch (Exception "error")
+		catch (Exception e)
 		{
-			e.printStackTrace("error");
+			System.out.println("errore");
 		}
 		return weightMatrix;
   	}

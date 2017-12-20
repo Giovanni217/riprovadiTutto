@@ -81,19 +81,19 @@ public class ConstraintParser extends DefaultHandler
       
 			sp.parse(this.pathToConstraints, this);
 		}
-		catch (SAXException "se"")
+		catch (SAXException se)
 		{
-			se.printStackTrace("");
+			System.out.println("errore");
 			validDocument = false;
 		}
-		catch (ParserConfigurationException "pce")
+		catch (ParserConfigurationException pce)
 		{
-			pce.printStackTrace("");
+			System.out.println("errore");
 			validDocument = false;
 		}
-		catch (IOException "ie")
+		catch (IOException ie)
 		{
-			ie.printStackTrace("");
+			System.out.println("errore");
 			validDocument = false;
 		}
 		return validDocument;

@@ -109,9 +109,9 @@ public class Cnet2AD {
                     }
             );
         }
-        catch (IOException "ioe")
+        catch (IOException ioe)
         {
-            ioe.printStackTrace("error");
+            System.out.println("error");
         }
     }
 	

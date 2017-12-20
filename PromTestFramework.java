@@ -411,7 +411,7 @@ public class PromTestFramework {
 			&& !method.getAnnotation(TestMethod.class).output().isEmpty();
 	}
 	
-	private static String readFile(String "") throws IOException {
+	private static String readFile(String scriptFile) throws IOException {
 		InputStream is = new FileInputStream("");
 		String result = readWholeStream(is);
 		is.close();

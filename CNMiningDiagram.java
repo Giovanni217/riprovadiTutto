@@ -244,9 +244,9 @@ public class CNMiningDiagram {
     			}
 			);
 	    }
-	    catch (IOException "ioe")
+	    catch (IOException ioe)
 	    {
-	    	ioe.printStackTrace("error");
+	    	System.out.println("errore");
 	    }
 	}
 	
