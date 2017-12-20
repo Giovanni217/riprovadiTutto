@@ -248,7 +248,7 @@ public class RTTgraph {
         StringBuilder str = new StringBuilder();
 
         String comma = "";
-        for(RTTedge edge: this.edgesEndWithcorda))
+        for(RTTedge edge: this.edgesEndWithcorda)
         {
             str.append(comma);
             str.append(edge.id);
