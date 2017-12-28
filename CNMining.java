@@ -109,10 +109,7 @@ public class CNMining {
         return (boolean[]) startCNMining(context, log, settings, true);
     }
 
-    public static void progress(boolean uiMode, UIPluginContext context, int value) {
-        if (uiMode)
-            context.getProgress().setValue(value);
-    }
+    public static void progress(boolean uiMode, UIPluginContext context, int value) {  if (uiMode)  context.getProgress().setValue(value); }
 
     public static double[][] setMatrix(Settings settings, double[][] Matrix, UnfoldResult unfoldResult) {
         if (settings.sigmaLogNoise > 0.0D) {
@@ -150,7 +147,7 @@ public class CNMining {
                 }
                 System.out.println("NOT OK!!!!!!!");
             }
-        }
+		 }
         return e;
     }
 
@@ -159,10 +156,8 @@ public class CNMining {
         int removableEdgesSize = removableEdges.size();
         for (int jj = 0; jj < removableEdgesSize; jj++) {
             e = (Edge) removableEdges.get(jj);
-
             double e_cs = causalScoreMatrixResidua[e.getX().getID_attivita()][e.getY().getID_attivita()];
-
-            if (e_cs < worst_causal_score) {
+			if (e_cs < worst_causal_score) {
                 worst_causal_score = e_cs;
                 bestRemovable = e;
             }
@@ -222,9 +217,7 @@ public class CNMining {
         int jj = 0;
         while (jj < grafoFoldedListaNodiSize) {
             n = (Node) grafoFolded.listaNodi().get(jj);
-            if ((n.getInner_degree() == 0) && (n.getOuter_degree() == 0)) {
-                removableNodes.add(n);
-            }
+            if ((n.getInner_degree() == 0) && (n.getOuter_degree() == 0)) removableNodes.add(n);
             jj++;
             grafoFoldedListaNodiSize = grafoFolded.listaNodi().size();
         }
@@ -302,10 +295,8 @@ public class CNMining {
             System.exit(0);
         } else System.out.println("I Vincoli sono consistenti");
 
-        if (vincoliDisponibili) {
-            System.out.println("Stampa il grafo folded PG0...");
-
-            cnmining.costruisciGrafoPG0(
+        if (vincoliDisponibili) {  System.out.println("Stampa il grafo folded PG0...");
+		  cnmining.costruisciGrafoPG0(
                     grafoUnfolded, bestNextMatrix, vincoli.positiviUnfolded,
                     vincoli.positivi, vincoli.negatiUnfolded,
                     vincoli.negati, vincoli.forbidden,
@@ -364,8 +355,7 @@ public class CNMining {
         cnmining.rimuoviDipendenzeIndirette(
                 grafoFolded, foldResult.map, foldResult.attivita_tracce,
                 foldResult.traccia_attivita, causalScoreMatrixResidua,
-                settings.sigmaLogNoise, vincoli.positivi
-        );
+                settings.sigmaLogNoise, vincoli.positivi);
 
         Node start = new Node(attivita_iniziale, foldResult.map.get(attivita_iniziale));
         Node end = new Node(attivita_finale, foldResult.map.get(attivita_finale));
@@ -376,8 +366,7 @@ public class CNMining {
         grafoFolded = cnmining.rimuoviAttivitaFittizie(
                 grafoFolded, foldResult.map, foldResult.traccia_attivita,
                 foldResult.attivita_tracce, start, end,
-                log, startActivities, endActivities
-        );
+                log, startActivities, endActivities);
 
         cnmining.computeBindings(grafoFolded, foldResult.traccia_attivita, foldResult.map);
 
@@ -386,8 +375,7 @@ public class CNMining {
         causalScoreMatrixResidua = cnmining.calcoloMatriceDeiCausalScore(log, foldResult.map, foldResult.traccia_attivita, settings.fallFactor);
         for (; ; ) {
             ObjectArrayList<Edge> removableEdges = cnmining.removableEdges(
-                    grafoFolded, causalScoreMatrixResidua, vincoli.positivi, foldResult.map, settings.relativeToBest
-            );
+                    grafoFolded, causalScoreMatrixResidua, vincoli.positivi, foldResult.map, settings.relativeToBest);
 
             if (removableEdges.size() == 0) {
                 break;
@@ -552,9 +540,7 @@ public class CNMining {
                         break;
                     }
                 }
-                if (!found) {
-                    graph.getMap().put(node, new ObjectOpenHashSet<Node>());
-                }
+                if (!found) graph.getMap().put(node, new ObjectOpenHashSet<Node>());
             }
         }
     }
